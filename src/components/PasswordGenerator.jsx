@@ -3,7 +3,6 @@ import { useState } from "react";
 import iconCopy from "../assets/images/icon-copy.svg";
 import arrow from "../assets/images/icon-arrow-right.svg";
 import Strength from "./Strength";
-import check from "../assets/images/icon-check.svg"
 
 const PasswordGenerator = () => {
   const [password, setPassword] = useState("");
