@@ -29,7 +29,7 @@ export default {
         "strength": "77px 200px"
       },
       content: {
-        'check-icon': 'url("/public/icon-check.svg")'
+        'check-icon': 'url("/icon-check.svg")'
       },
       padding: {
         '0.5': '0.188rem'

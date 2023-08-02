@@ -67,6 +67,7 @@ const PasswordGenerator = () => {
     }
 
     setPassword(generatedPassword)
+    setClicked(false)
   }
 
   const handleClipboard = () => {
@@ -105,7 +106,7 @@ const PasswordGenerator = () => {
             onChange={(e) => setPasswordLength(e.target.value)}
           />
         </div>
-        <div className="flex flex-col text-custom-light-gray w-mobile-checkbox-inputs my-8 gap-y-4">
+        <div className="flex flex-col text-custom-light-gray w-mobile-checkbox-inputs my-6 gap-y-4">
           <label htmlFor="uppercase">
             <input
               type="checkbox"
@@ -147,11 +148,13 @@ const PasswordGenerator = () => {
             Include Symbols
           </label>
         </div>
+      </form>
+      <div className="flex flex-col items-center min-w-full gap-y-4 bg-custom-dark-gray">
         <Strength password={password} />
         <button className="flex border-box border-transparent border-2 justify-center gap-x-4 items-center py-3 w-mobile-button mb-4 bg-custom-light-green text-base font-medium cursor-pointer hover:bg-black hover:text-custom-light-green hover:border-2 hover:border-custom-light-green ">
           GENERATE <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" className="fill-current hover:text-custom-light-green"><path d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/></svg>
         </button>
-      </form>
+      </div>
     </div>
   );
 };
