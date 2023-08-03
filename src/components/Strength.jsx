@@ -45,16 +45,63 @@ const Strength = (props) => {
 
     setPasswordStrength(power)
   }
+
+  const passwordStrengthMeter = (passwordStrength) => {
+    switch (passwordStrength) {
+      case "TOO WEAK!":
+        return (
+          <>
+            <div className="w-stregth-indicator h-7 bg-custom-red"></div>
+            <div className="w-stregth-indicator h-7 border-2"></div>
+            <div className="w-stregth-indicator h-7 border-2"></div>
+            <div className="w-stregth-indicator h-7 border-2"></div>
+          </>
+        )
+      case "WEAK":
+        return (
+          <>
+            <div className="w-stregth-indicator h-7 bg-custom-orange"></div>
+            <div className="w-stregth-indicator h-7 bg-custom-orange"></div>
+            <div className="w-stregth-indicator h-7 border-2"></div>
+            <div className="w-stregth-indicator h-7 border-2"></div>
+          </>
+        )
+      case "MEDIUM":
+        return (
+          <>
+            <div className="w-stregth-indicator h-7 bg-custom-yellow"></div>
+            <div className="w-stregth-indicator h-7 bg-custom-yellow"></div>
+            <div className="w-stregth-indicator h-7 bg-custom-yellow"></div>
+            <div className="w-stregth-indicator h-7 border-2"></div>
+          </>
+        )
+      case "STRONG":
+        return (
+          <>
+            <div className="w-stregth-indicator h-7 bg-custom-light-green"></div>
+            <div className="w-stregth-indicator h-7 bg-custom-light-green"></div>
+            <div className="w-stregth-indicator h-7 bg-custom-light-green"></div>
+            <div className="w-stregth-indicator h-7 bg-custom-light-green"></div>
+          </>
+        )
+      default:
+        return (
+          <>
+            <div className="w-stregth-indicator h-7 border-2"></div>
+            <div className="w-stregth-indicator h-7 border-2"></div>
+            <div className="w-stregth-indicator h-7 border-2"></div>
+            <div className="w-stregth-indicator h-7 border-2"></div>
+          </>
+        )
+    }
+  }
   
   return (
     <div className="grid grid-cols-strength place-content-center items-center w-mobile-button bg-custom-black p-4">
         <p className="text-custom-gray w-fit">STRENGTH</p>
         <div className="flex gap-x-2 justify-end items-center">
-        <p className="text-custom-light-gray text-xl">{passwordStrength}</p>
-          <div className="w-stregth-indicator h-7 border-2"></div>
-          <div className="w-stregth-indicator h-7 border-2"></div>
-          <div className="w-stregth-indicator h-7 border-2"></div>
-          <div className="w-stregth-indicator h-7 border-2"></div>
+          <p className="text-custom-light-gray text-xl" translate="no">{passwordStrength}</p>
+          {passwordStrengthMeter(passwordStrength)}
         </div>
     </div>
   )

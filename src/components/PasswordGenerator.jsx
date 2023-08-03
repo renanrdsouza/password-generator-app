@@ -77,7 +77,7 @@ const PasswordGenerator = () => {
 
   return (
     <div className="w-mobile flex flex-col items-center font-JetBrains">
-      <h1 className="text-custom-gray bg-custom-black text-base w-fit mb-4">
+      <h1 className="text-custom-gray bg-custom-black text-base w-fit mb-4" translate="no">
         Password Generator
       </h1>
       <div className="flex justify-between items-center px-5 py-4 bg-custom-dark-gray min-w-full">
@@ -90,7 +90,7 @@ const PasswordGenerator = () => {
         className="flex min-w-full flex-col items-center bg-custom-dark-gray mt-4"
       >
         <div className="grid grid-cols-2 grid-rows-2 gap-y-2 mt-4">
-          <h2 className="text-custom-light-gray">Character Length</h2>
+          <h2 className="text-custom-light-gray" translate="no">Character Length</h2>
           <p className="grid-row-end place-self-end text-custom-light-green">
             {passwordLength}
           </p>
@@ -105,7 +105,7 @@ const PasswordGenerator = () => {
           />
         </div>
         <div className="flex flex-col text-custom-light-gray w-mobile-checkbox-inputs my-6 gap-y-4">
-          <label htmlFor="uppercase">
+          <label htmlFor="uppercase" translate="no">
             <input
               type="checkbox"
               name="uppercase"
@@ -115,7 +115,7 @@ const PasswordGenerator = () => {
             />
             Include Uppercase Letters
           </label>
-          <label htmlFor="lowercase">
+          <label htmlFor="lowercase" translate="no">
             <input
               type="checkbox"
               name="lowercase"
@@ -125,7 +125,7 @@ const PasswordGenerator = () => {
             />
             Include Lowercase Letters
           </label>
-          <label htmlFor="numbers">
+          <label htmlFor="numbers" translate="no">
             <input
               type="checkbox"
               name="numbers"
@@ -135,7 +135,7 @@ const PasswordGenerator = () => {
             />
             Include Numbers
           </label>
-          <label htmlFor="symbols">
+          <label htmlFor="symbols" translate="no">
             <input
               type="checkbox"
               name="symbols"
@@ -151,7 +151,7 @@ const PasswordGenerator = () => {
         <Strength password={password} />
         <button className="flex border-box border-transparent border-2 justify-center gap-x-4 items-center py-3 w-mobile-button mb-4 bg-custom-light-green text-base font-medium cursor-pointer hover:bg-black hover:text-custom-light-green hover:border-2 hover:border-custom-light-green" onClick={
           (e) => generatePassword(e, checkedValues, passwordLength)
-        }>
+        } translate="no">
           GENERATE <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" className="fill-current hover:text-custom-light-green"><path d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/></svg>
         </button>
       </div>
