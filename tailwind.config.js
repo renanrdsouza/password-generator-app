@@ -23,7 +23,9 @@ export default {
         "mobile": "21.438rem",
         "mobile-button": "19.438rem",
         "mobile-checkbox-inputs": "19.201rem",
-        "stregth-indicator": "0.625rem"
+        "stregth-indicator": "0.625rem",
+        "desktop": "39.5rem",
+        "desktop-button": "37.13rem"
       },
       gridTemplateColumns: {
         "strength": "77px 200px"

@@ -97,7 +97,7 @@ const Strength = (props) => {
   }
   
   return (
-    <div className="grid grid-cols-strength place-content-center items-center w-mobile-button bg-custom-black p-4">
+    <div className="grid grid-cols-strength place-content-center items-center w-mobile-button bg-custom-black p-4 md:w-desktop-button md:justify-between">
         <p className="text-custom-gray w-fit">STRENGTH</p>
         <div className="flex gap-x-2 justify-end items-center">
           <p className="text-custom-light-gray text-xl" translate="no">{passwordStrength}</p>
