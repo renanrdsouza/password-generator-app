@@ -5,12 +5,14 @@ const Form = (props) => {
         className="flex min-w-full flex-col items-center bg-custom-dark-gray mt-4"
       >
         <div className="grid grid-cols-2 grid-rows-2 gap-y-2 mt-4 md:w-desktop md:px-5">
-          <h2 className="text-custom-light-gray" translate="no">Character Length</h2>
+          <label htmlFor="character-length-input" className="text-custom-light-gray" translate="no">Character Length</label>
           <p className="grid-row-end place-self-end text-custom-light-green">
             {props.passwordLength}
           </p>
           <input
             type="range"
+            id="character-length-input"
+            name="character-length-input"
             step={1}
             min={8}
             max={20}
