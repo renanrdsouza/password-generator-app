@@ -47,53 +47,19 @@ const Strength = (props) => {
   }
 
   const passwordStrengthMeter = (passwordStrength) => {
-    switch (passwordStrength) {
-      case "TOO WEAK!":
-        return (
-          <>
-            <div className="w-stregth-indicator h-7 bg-custom-red"></div>
-            <div className="w-stregth-indicator h-7 border-2"></div>
-            <div className="w-stregth-indicator h-7 border-2"></div>
-            <div className="w-stregth-indicator h-7 border-2"></div>
-          </>
-        )
-      case "WEAK":
-        return (
-          <>
-            <div className="w-stregth-indicator h-7 bg-custom-orange"></div>
-            <div className="w-stregth-indicator h-7 bg-custom-orange"></div>
-            <div className="w-stregth-indicator h-7 border-2"></div>
-            <div className="w-stregth-indicator h-7 border-2"></div>
-          </>
-        )
-      case "MEDIUM":
-        return (
-          <>
-            <div className="w-stregth-indicator h-7 bg-custom-yellow"></div>
-            <div className="w-stregth-indicator h-7 bg-custom-yellow"></div>
-            <div className="w-stregth-indicator h-7 bg-custom-yellow"></div>
-            <div className="w-stregth-indicator h-7 border-2"></div>
-          </>
-        )
-      case "STRONG":
-        return (
-          <>
-            <div className="w-stregth-indicator h-7 bg-custom-light-green"></div>
-            <div className="w-stregth-indicator h-7 bg-custom-light-green"></div>
-            <div className="w-stregth-indicator h-7 bg-custom-light-green"></div>
-            <div className="w-stregth-indicator h-7 bg-custom-light-green"></div>
-          </>
-        )
-      default:
-        return (
-          <>
-            <div className="w-stregth-indicator h-7 border-2"></div>
-            <div className="w-stregth-indicator h-7 border-2"></div>
-            <div className="w-stregth-indicator h-7 border-2"></div>
-            <div className="w-stregth-indicator h-7 border-2"></div>
-          </>
-        )
-    }
+    const colors = {
+      "TOO WEAK!": ["bg-custom-red"],
+      "WEAK": ["bg-custom-orange", "bg-custom-orange"],
+      "MEDIUM": ["bg-custom-yellow", "bg-custom-yellow", "bg-custom-yellow"],
+      "STRONG": ["bg-custom-light-green", "bg-custom-light-green", "bg-custom-light-green", "bg-custom-light-green"],
+    };
+  
+    const color = colors[passwordStrength] || [];
+    const divs = Array(4).fill().map((_, i) => (
+      <div key={i} className={`w-stregth-indicator h-7 ${color[i] || 'border-2'}`}></div>
+    ));
+  
+    return <>{divs}</>;
   }
   
   return (

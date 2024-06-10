@@ -2,13 +2,13 @@ const Button = (props) => {
   return (
     <>
       <button
-        className="flex border-box border-transparent border-2 justify-center gap-x-4 items-center py-3 w-mobile-button mb-4 bg-custom-light-green text-base font-medium cursor-pointer hover:bg-black hover:text-custom-light-green hover:border-2 hover:border-custom-light-green md:w-desktop-button md:px-5"
+        className="flex border-box border-transparent border-2 justify-center gap-x-4 items-center py-3 w-mobile-button mb-4 bg-custom-light-green text-base font-medium cursor-pointer hover:bg-black hover:text-custom-light-green hover:border-2 hover:border-custom-light-green md:w-desktop-button md:px-5 transition-all duration-200"
         onClick={(e) =>
           props.generatePassword(e, props.checkedValues, props.passwordLength)
         }
         translate="no"
       >
-        GENERATE{" "}
+        GENERATE
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="12"
