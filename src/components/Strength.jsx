@@ -11,39 +11,39 @@ const Strength = (props) => {
   }, [password])
 
   const handlePasswordStrength = () => {
-    let power;
     let character = {
       upperCase: false,
       lowerCase: false,
       number: false,
       symbol: false
     }
-
+  
     for (let i = 0; i < password.length; i++) {
-      if (/[A-Z]/.test(password[i])) {
-        character.upperCase = true
-      } else if (/[a-z]/.test(password[i])) {
-        character.lowerCase = true
-      } else if (/\W/.test(password[i])) {
-        character.symbol = true
-      } else {
-        character.number = true
+      switch (true) {
+        case /[A-Z]/.test(password[i]):
+          character.upperCase = true;
+          break;
+        case /[a-z]/.test(password[i]):
+          character.lowerCase = true;
+          break;
+        case /\W/.test(password[i]):
+          character.symbol = true;
+          break;
+        default:
+          character.number = true;
       }
     }
-
-    let differentTypesOfCharacters = Object.values(character).filter(value => value === true).length
-
-    if (password.length > 8 && differentTypesOfCharacters === 4) {
-      power = "STRONG"
-    } else if (password.length > 8 && differentTypesOfCharacters > 2) {
-      power = "MEDIUM"
-    } else if (password.length > 8 && differentTypesOfCharacters === 2) {
-      power = "WEAK"
-    } else {
-      power = "TOO WEAK!"
-    }
-
-    setPasswordStrength(power)
+  
+    const differentTypesOfCharacters = Object.values(character).filter(Boolean).length;
+    const passwordStrengths = {
+      4: "STRONG",
+      3: "MEDIUM",
+      2: "WEAK",
+      1: "TOO WEAK!"
+    };
+  
+    const power = password.length > 8 ? passwordStrengths[differentTypesOfCharacters] : "TOO WEAK!";
+    setPasswordStrength(power);
   }
 
   const passwordStrengthMeter = (passwordStrength) => {

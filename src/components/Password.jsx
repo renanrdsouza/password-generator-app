@@ -1,7 +1,7 @@
 const Password = (props) => {
   return (
-    <div className="flex justify-between items-center px-5 py-4 bg-custom-dark-gray min-w-full md:w-desktop">
-        <p className="flex items-center text-custom-light-gray text-xl font-medium h-8">
+    <div className="flex justify-between items-center px-4 py-4 bg-custom-dark-gray min-w-full md:w-desktop">
+        <p className="flex items-center text-custom-light-gray text-lg font-medium h-8">
           {props.password}
         </p>
       <div className="flex gap-x-2 justify-center">
